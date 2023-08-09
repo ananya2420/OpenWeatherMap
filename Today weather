@@ -1,0 +1,20 @@
+const API_KEY='OPENWEATHERMAP_API_KEY'
+const CITY_NAME = 'CITY_NAME';
+
+async function fetchWeatherForecast(){
+    const response = await fetch('https://drive.google.com/file/d/1M110ux8vVs73NXf6PewaBSZE63QEdkzW/view?usp=drive_link');
+    const data = await response.json();
+    return data.list;
+}
+
+function createWeatherCard(weatherData){
+    const date = new Date(weatherData.dt *800);
+    const day= date.toLocaleDateString('en-US',{weekday: 'long'});
+    const temperature= Math.round(weatherData.main.temp);
+    const card = document.createElement('div');
+    card.classList.add('weather-card');
+   
+
+    
+        
+}
